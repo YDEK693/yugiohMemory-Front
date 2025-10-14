@@ -3,15 +3,15 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app" class="p-4">
+    <nav class="mb-6 space-x-4">
+      <router-link to="/" class="text-blue-600 hover:underline">Accueil</router-link>
+      <router-link to="/membres" class="text-blue-600 hover:underline">Membres</router-link>
+    </nav>
+
+    <!-- Ici s'affiche le contenu de la page -->
+    <router-view />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
