@@ -30,7 +30,12 @@ onMounted(async () => {
         <div v-else>
             <ul class="space-y-2">
                 <li v-for="membre in membres" :key="membre.pseudo" class="border p-3 rounded-md shadow-sm">
-                    <p><strong>Pseudo :</strong> {{ membre.pseudo }}</p>
+                    <p>
+                        <strong>Pseudo : </strong>
+                        <router-link :to="`/membres/${membre.pseudo}`" class="text-blue-500 hover:underline">
+                            {{ membre.pseudo }}
+                        </router-link>
+                    </p>
                     <p><strong>Nom :</strong> {{ membre.nom }}</p>
                     <p><strong>Prénom :</strong> {{ membre.prenom }}</p>
                 </li>

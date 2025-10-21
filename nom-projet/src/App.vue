@@ -1,18 +1,26 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <div id="app" class="p-4">
-    <nav class="mb-6 space-x-4">
-      <router-link to="/" class="text-blue-600 hover:underline">Accueil</router-link>
-      <router-link to="/membres" class="text-blue-600 hover:underline">Membres</router-link>
+  <div id="app">
+    <!-- Barre de navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-blue-600 text-white shadow-md z-50">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex justify-around">
+        <router-link to="/" class="hover:underline">Accueil</router-link>
+        <router-link to="/membres" class="hover:underline">Membres</router-link>
+        <router-link to="/decks" class="hover:underline">Decks</router-link>
+        <router-link to="/decks/gestion" class="hover:underline"> gestion des Decks</router-link>
+      </div>
     </nav>
 
-    <!-- Ici s'affiche le contenu de la page -->
-    <router-view />
+    <!-- Contenu principal avec un margin-top pour laisser de l'espace sous la nav -->
+    <div class="pt-16 px-4">
+      <router-view />
+    </div>
   </div>
 </template>
+
 
 <style scoped>
 .logo {
